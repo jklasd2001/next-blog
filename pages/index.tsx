@@ -17,6 +17,10 @@ const Home: NextPage = () => {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
+        <div className="text-[34px] text-[#dd9c4f]">
+    aspodkaspo
+        </div>
+
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
@@ -46,7 +50,7 @@ const Home: NextPage = () => {
             className={styles.card}
           >
             <h2>Deploy &rarr;</h2>
-            <p>
+            <p className="text-lg">
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
