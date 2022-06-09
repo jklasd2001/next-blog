@@ -1,8 +1,5 @@
-
 import type { NextPage } from 'next'
 import Head from 'next/head'
-
-import {Header} from 'src/components'
 
 const Home: NextPage = () => {
   return (
@@ -13,13 +10,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
-        asdopkaspodk
-      </div>
-
-      <Header />
-
-
+      <div>asdopkaspodk</div>
     </div>
   )
 }
