@@ -33,5 +33,9 @@
       }
     ]
   },
-  "no-undef": "off"
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
 }
