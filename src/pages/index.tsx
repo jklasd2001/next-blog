@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 const Home: NextPage = () => {
+  console.log('123')
   return (
     <div className="">
       <Head>
@@ -10,7 +11,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>asdopkaspodk</div>
+      <div>Index About</div>
     </div>
   )
 }

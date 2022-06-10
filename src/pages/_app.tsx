@@ -1,20 +1,15 @@
-import type { AppProps } from "next/app";
+import type { AppProps } from 'next/app'
 
+import { Layout } from 'src/components'
 
-
-
-import { Footer, Header } from "src/components";
-
-import "../globals.css";
+import '../styles/globals.css'
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <div>
-      <Header />
+    <Layout>
       <Component {...pageProps} />
-      <Footer />
-    </div>
-  );
-};
+    </Layout>
+  )
+}
 
-export default App;
+export default App
