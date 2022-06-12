@@ -23,7 +23,7 @@ const Posts = ({ posts }: PostsProps) => {
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const result = await axios.get<StrapiApiResponse<Post[]>>(
-      'http://127.0.0.1:1337/api/articles'
+      'https://boiling-shore-98845.herokuapp.com/api/articles'
     )
     const posts = result.data.data
     return {

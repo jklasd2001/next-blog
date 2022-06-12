@@ -1,8 +1,8 @@
 import axios from 'axios'
+import { DateTime } from 'luxon'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 
 import { Post, StrapiApiResponse } from 'src/types'
-
 interface PostInterface {
   post: Post
 }
@@ -10,8 +10,15 @@ interface PostInterface {
 const Post = ({ post }: PostInterface) => {
   return (
     <div>
-      {post.attributes.title}
-      {post.attributes.content}
+      <div className="mb-6 mt-12 text-2xl font-semibold">
+        {post.attributes.title}
+      </div>
+
+      <div className="mb-6 text-xl">
+        {DateTime.fromISO(post.attributes.createdAt).toFormat('yyyy-MM-dd')}
+      </div>
+
+      <div className="">{post.attributes.content}</div>
     </div>
   )
 }
@@ -19,7 +26,7 @@ const Post = ({ post }: PostInterface) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
     const result = await axios.get<StrapiApiResponse<Post[]>>(
-      'http://127.0.0.1:1337/api/articles'
+      'https://boiling-shore-98845.herokuapp.com/api/articles'
     )
     const posts = result.data.data
     const paths = posts.map((post) => {
@@ -46,7 +53,7 @@ export const getStaticProps: GetStaticProps = async ({
 }: GetStaticPropsContext) => {
   try {
     const response = await axios.get<StrapiApiResponse<Post>>(
-      `http://127.0.0.1:1337/api/articles/${params?.postId}`
+      `https://boiling-shore-98845.herokuapp.com/api/articles/${params?.postId}`
     )
     const post = response.data.data
     return {
