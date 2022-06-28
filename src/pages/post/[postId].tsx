@@ -18,7 +18,7 @@ const Post = ({ post }: PostInterface) => {
         {DateTime.fromISO(post.attributes.createdAt).toFormat('yyyy-MM-dd')}
       </div>
 
-      <div className="">{post.attributes.content}</div>
+      <article className="prose">{post.attributes.content}</article>
     </div>
   )
 }
