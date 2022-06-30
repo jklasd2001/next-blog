@@ -1,8 +1,10 @@
+import { ThemeProvider } from 'next-themes'
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
 
 import { Layout } from 'src/components'
 
-import '../styles/globals.css'
+import 'src/styles/globals.css'
 
 /**
  * @description
@@ -10,9 +12,14 @@ import '../styles/globals.css'
  */
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ThemeProvider attribute="class">
+      <Layout>
+        <Head>
+          <title>자유를 찾아서</title>
+        </Head>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
   )
 }
 
