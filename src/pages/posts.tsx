@@ -1,8 +1,8 @@
-import axios from 'axios'
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
 
-import { Post, StrapiApiResponse } from 'src/types'
+import { fetchAPI } from 'src/libs'
+import { Post } from 'src/types'
 
 interface PostsProps {
   posts: Post[]
@@ -13,7 +13,7 @@ const Posts = ({ posts }: PostsProps) => {
     <div>
       {posts.map((post) => (
         <Link key={post.id} href={`/post/${post.id}`}>
-          {post.attributes.title}
+          <div>{post.attributes.title}</div>
         </Link>
       ))}
     </div>
@@ -22,10 +22,7 @@ const Posts = ({ posts }: PostsProps) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const result = await axios.get<StrapiApiResponse<Post[]>>(
-      'https://boiling-shore-98845.herokuapp.com/api/articles'
-    )
-    const posts = result.data.data
+    const posts = await fetchAPI<Post[]>('/articles')
     return {
       props: {
         posts,

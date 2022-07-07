@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 export const Header = () => {
   const { theme, setTheme } = useTheme()
-  console.log(theme)
   return (
     <header className="flex h-[56px] items-center shadow-lg">
       <div className="container mx-auto flex justify-between">
