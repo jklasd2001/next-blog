@@ -1,3 +1,4 @@
+import { DateTime } from 'luxon'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 
 import { fetchAPI } from 'src/libs'
@@ -14,11 +15,11 @@ const Post = ({ post }: PostInterface) => {
       </div>
 
       <div className="mb-6 text-xl">
-        {/* {DateTime.fromISO(post.attributes.createdAt).toFormat('yyyy-MM-dd')} */}
+        {DateTime.fromISO(post.attributes.createdAt).toFormat('yyyy-MM-dd')}
       </div>
 
       <article
-        className="prose"
+        className="prose prose-base dark:prose-invert lg:prose-lg xl:prose-xl"
         dangerouslySetInnerHTML={{ __html: post.attributes.content }}
       />
     </div>
