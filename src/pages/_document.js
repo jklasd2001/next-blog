@@ -14,13 +14,10 @@ class MyDocument extends Document {
         <Head>
           <meta name="description" content="김영수의 개발 블로그입니다. 하나라도 얻어가셨으면 좋겠습니다." />
           <link rel="icon" href="/favicon.ico" />
-          {/* 폰트 파일을 더 일찍 가려오기 위함 */}
-          <link rel="preconnect" href="https://fonts.googleapis.com" ></link>
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
-          <link href={`https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap`} rel="stylesheet"></link>
+          
         </Head>
         {/* Tailwind CSS Font Family */}
-        <body className="font-nunito bg-white dark:bg-slate-900"> 
+        <body> 
           <Main />
           <NextScript />
         </body>
